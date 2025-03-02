@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# project specific
+weights/
+screenshots/
+imgs/
+
 # C extensions
 *.so
 
