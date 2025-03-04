@@ -105,7 +105,7 @@ def click_mouse(x_min: float, y_min: float, x_max: float, y_max: float) -> str:
 
 
 @tool
-def type_text(text: str, is_mac: bool = True) -> str:
+def type_text(text: str, is_mac: bool) -> str:
     """Type Text. Please specify if you are on a Mac or Windows machine."""
     try:
         for char in text:
@@ -172,7 +172,7 @@ model_with_tools = model.bind_tools(
         press_two_hotkeys,
     ]
 )
-goal = "Open a Youtube Video by 'Joko and Klaas' in Chrome"
+goal = "Open powerpoint using windows search and create a presentation about cats vs dogs"
 
 messages = []
 
@@ -194,6 +194,7 @@ while True:
 
     system_prompt = SystemMessage(
         content=f"""You are a helpful assistant that can move the mouse, click on the screen, type text, press keys, and press hotkeys.
+        If you have tried the same steps multiple times without success, think about a different approach.
         """
     )
 
