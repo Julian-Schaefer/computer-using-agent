@@ -1,13 +1,10 @@
 import pyautogui
 import time
 from PIL import Image
-from typing import Tuple, Optional, Dict, Any
-import logging
+from typing import Tuple, Optional
 import os
 import base64
 import io
-from langchain.agents import Tool, AgentExecutor, create_tool_calling_agent
-from langchain import hub
 from langchain_core.messages import HumanMessage, ToolMessage, SystemMessage
 from langchain_openai import AzureChatOpenAI
 from dotenv import load_dotenv
@@ -25,8 +22,6 @@ model = AzureChatOpenAI(
     model="gpt-4o",
     temperature=0,
 )
-
-from typing import Literal
 
 from langchain_core.tools import tool
 
