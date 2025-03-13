@@ -53,11 +53,7 @@ def process_image(
         processed_image.save(img_byte_arr, format="PNG")
         img_byte_arr.seek(0)
 
-        # Return both the image and parsed content
-        return {
-            "parsed_content": parsed_content,
-            "image": base64.b64encode(img_byte_arr.getvalue()).decode("utf-8"),
-        }
+        return base64.b64encode(img_byte_arr.getvalue()).decode("utf-8"), parsed_content
 
     except Exception as e:
         # Re-raise the exception to be handled by the caller
